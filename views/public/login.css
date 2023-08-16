@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to right, #c31432, #240b36);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    width: 400px;
+  }
+  
+  .login-box {
+    position: relative;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    color: #fff;
+  }
+  
+  .login-box h2 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .user-box {
+    position: relative;
+  }
+  
+  .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    border-radius: 0;
+    transition: border-color 0.3s ease;
+  }
+  
+  .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+  
+  .user-box input:focus ~ label,
+  .user-box input:valid ~ label {
+    top: -20px;
+    font-size: 12px;
+  }
+  
+  .eye-icon {
+    position: absolute;
+    right: 0;
+    top: 28%;
+    font-size: 18px;
+    cursor: pointer;
+    color: #fff; /* Added color to the icon */
+  }
+  
+  .submit-btn {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+    color: #c31432;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 3px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #c31432;
+    color: #fff;
+  }
+  
+  .forgot-password,
+  .already-have-account {
+    text-align: center;
+    margin-top: 1vw;
+    color: #ddd;
+  }
+  
+  .forgot-password:hover,
+  .already-have-account a:hover {
+    color: #fff;
+  }
+  
+  .already-have-account a {
+    color: #c31432;
+    text-decoration: none;
+  }
+  
+  .already-have-account a:hover {
+    text-decoration: underline;
+  }
+
+  .error
+  {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5vw;
+    margin-bottom: 0.5vw;
+  }
+.login-par{
+    margin-top: 1vw;
+    
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+  .login{
+    padding: 5px 20px 5px 20px;
+    border-radius: 8px;
+    font-size: medium;
+  }
+
+  .login:hover{
+   background-color: black;
+   color: white;
+  }
+
+
+  

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="createTrip.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <title>Around the world in 18 stops</title>
+  <link rel="icon" href="Images/icon.png" type="image/x-icon">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><img src="icon.png" alt="" width="25px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="createTrip.html">Create a trip</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="currentTrip.html">View your trips</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="HowToUse.html">How to use ?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="About.html">About</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <form action="/logout?_method=DELETE" method="POST">
+              <button id="logout" type="submit">Log Out</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <alert>
+    <div id="alrt"></div>
+  </alert>
+
+
+  <header>
+    <h1 class="text-center pt-4">
+      Around the world
+    </h1>
+    <h5 class="text-center pb-3"><i>in 18 stops !</i></h5>
+    <div class="moving-text-par">
+      <div class="moving-text-child">
+        <marquee behaviour="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+          <span class="blink1" style="font-size: 17px">
+            <i style="margin-right: 200px;"> Get best routes for your tours in terms of time/distance for variety of
+              modes
+              of travel.</i>
+          </span>
+        </marquee>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+
+
+    <div class="col-1 pt-5 " id="hid">
+      <div class="ek">Details</div>
+
+      <div class="set_size  pt-4">
+        <select class="form-select " aria-label="Default select example" id="e4">
+          <option selected value="0" class="dropdown"> Select your trip type </option>
+          <option value="1" class="dropdown">Tour</option>
+          <option value="2" class="dropdown">Goods transportation</option>
+          <option value="3" class="dropdown">Roadtrip</option>
+          <option value="4" class="dropdown">Walking Trip</option>
+          <option value="5" class="dropdown">Passenger buses</option>
+
+        </select>
+      </div>
+
+      <div class="pt-4">
+        <h3>OR</h3> To have your custom trip click on following button and then choose desired combination!!
+      </div>
+
+      <button onclick=make_vis() class="btn mt-4" id="btn45">custom tour</button>
+      <div class="set_size hide pt-4">
+        <select class="form-select " aria-label="Default select example" id="e3">
+          <option selected value="0" class="dropdown">Is it round trip? </option>
+          <option value="1" class="dropdown">Yes (Same start and end location)</option>
+          <option value="2" class="dropdown">No (Different start and end loacation) </option>
+
+        </select>
+      </div>
+
+      <div class="set_size hide pt-5">
+        <select class="form-select " aria-label="Default select example" id="e1">
+          <option selected value="0" class="dropdown">select mode of travel</option>
+          <option value="drive" class="dropdown">drive</option>
+          <option value="truck" class="dropdown">truck</option>
+          <option value="walk" class="dropdown">walk</option>
+          <option value="bicycle" class="dropdown">bicycle</option>
+
+        </select>
+      </div>
+      <div class="set_size hide pt-5">
+        <select class="form-select " aria-label="Default select example" id="e2">
+          <option selected value="0" class="dropdown">Optimize by </option>
+          <option value="1" class="dropdown">Time</option>
+          <option value="2" class="dropdown" class="dropdown">Distance</option>
+
+        </select>
+      </div>
+
+    </div>
+
+    <div class="col-2">
+      <div class="mb-3 set_size  pt-5">
+        <label for="val_of_n" class="form-label " id="edit1">Number of cities</label>
+        <input type="number" class="form-control " id="val_of_n" placeholder="You can enter values upto 18">
+
+      </div>
+      <button onclick=getN() class="btn" id="btn1">Submit</button>
+      <div id="spin">
+
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="autocomplete-container pt-5 mb-3" id="autocomplete-container">
+        <label for="autocomplete-container" class="form-label mb-1" id="edit">Enter starting city</label>
+      </div>
+      <button onclick=getCityNames() class="btn " id="btn2">Enter</button>
+      <button onclick=reset() class="btn  ms-2" id="btn3">Reset</button>
+      <div class=" mb-3 set_size  pt-5" id="output">
+      </div>
+      <div>
+        <div id="enteredCitiesHeading">
+          <h4>Entered cities -</h4>
+        </div>
+        <ul id="enteredCities">
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="route">
+    <div id="route">
+      <a href="/currentTrip.html" class="btn-lg btn-primary">Check route!</a>
+    </div>
+  </div>
+
+
+
+  <footer>
+    <span>
+      <img src="Images/icon.png" alt="" width="30px" height="30px">
+    </span>
+
+    <div class="">
+      <a href="createTrip.html">Create a trip</a>|
+      <a href="currentTrip.html">View your trips</a>|
+      <a href="HowToUse.html">How to use</a>|
+      <a href="About.html">About</a>
+    </div>
+
+    <div class="">
+      <a href=""></a>
+    </div>
+
+  </footer>
+  <div class="cr">
+    Copyright © 2022 Around the world
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+  <script src="autocomplete.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="createTrip.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

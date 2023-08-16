@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="HowToUse.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+    rel="stylesheet">
+
+  <title>Around the world in 18 stops</title>
+  <link rel="icon" href="Images/icon.png" type="image/x-icon">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><img src="icon.png" alt="" width="25px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="createTrip.html">Create a trip</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="currentTrip.html">View your trips</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="HowToUse.html">How to use ?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="About.html">About</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <form action="/logout?_method=DELETE" method="POST">
+              <button id="logout" type="submit">Log Out</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="nap">
+
+    <div class="htu">
+      <h1 class="pb-5">How to Use</h1>
+      <h4 class="pb-3">Follow the procedure below in the specified order:</h4>
+      <p>1. Select your trip type.</p>
+      <p>2. If you want a different kind of trip, click on the custom tour button and select the type of trip, mode of
+        travel, and optimization options. <b>Remember, you should either select a trip type option or click on the
+          custom trip button. If you do both, the output will be based on the latter.</b></p>
+      <p>3. Now enter the number of cities for your trip. You can enter up to 18 numbers. <b>Don't forget to click the
+          submit button next to it.</b></p>
+      <p>4. If you missed a step from above before clicking the submit button, you'll receive an error. Read the error
+        message carefully and follow the instructions provided.</p>
+      <p>5. If it's submitted without any errors, you can proceed.</p>
+      <p>6. First, enter your starting city in the provided box.</p>
+      <p>7. You will receive suggestions after typing at least 3 letters. It's recommended to select values from the
+        suggestions to prevent errors due to spelling mistakes.</p>
+      <p>8. Once you press Enter after inputting the starting city name, a notification will appear on the screen
+        indicating you can enter the names of the remaining cities in any order.</p>
+      <p>9. If you've chosen different starting and ending locations, you'll need to enter the ending location
+        immediately after the starting one. You'll be notified of this after submitting the starting location.</p>
+      <p>10. Once you've entered the names of all cities, the submit button will be hidden. Wait a few seconds, and your
+        route will be displayed.</p>
+      <p>11. Scroll down to view your route. If you'd like to try a different route, click on the reset button to start
+        over.</p>
+
+      <h4 class="pb-3 pt-5">Specifications of Mentioned Trips:</h4>
+      <p>1. <b>Tour</b>: Type of trip - <i>Round trip</i>, Mode - <i>Drive</i>, Optimized by - <i>Time</i>.</p>
+      <p>2. <b>Goods Transportation</b>: Type of trip - <i>Different starting and ending locations</i>, Mode -
+        <i>Trip</i>, Optimized by - <i>Distance</i>.</p>
+      <p>3. <b>Roadtrip</b>: Type of trip - <i>Round trip</i>, Mode - <i>Drive</i>, Optimized by - <i>Distance</i>.</p>
+      <p>4. <b>Walking Trip</b>: Type of trip - <i>Round trip</i>, Mode - <i>Walk</i>, Optimized by - <i>Distance</i>.
+      </p>
+      <p>5. <b>Passenger Buses</b>: Type of trip - <i>Different starting and ending locations</i>, Mode - <i>Drive</i>,
+        Optimized by - <i>Distance</i>.</p>
+    </div>
+
+
+  </div>
+  <footer>
+    <span>
+      <img src="Images/icon.png" alt="" width="30px" height="30px">
+    </span>
+
+    <div class="">
+      <a href="createTrip.html">Create a trip</a>|
+      <a href="currentTrip.html">View your trips</a>|
+      <a href="HowToUse.html">How to use</a>|
+      <a href="About.html">About</a>
+    </div>
+
+    <div class="">
+      <a href=""></a>
+    </div>
+
+  </footer>
+  <div class="cr">
+    Copyright © 2022 Around the world
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

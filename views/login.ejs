@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-w/9IpQGfR9U9FZ5hBfW1owF/9zNkwfF23EFMgHzF6Dvk/e3tMA6t9eH27D0n5KR5" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="login.css">
+  <title>Around the world in 18 stops</title>
+  <link rel="icon" href="Images/icon.png" type="image/x-icon">
+</head>
+
+<body>
+  <div class="container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form action="/login" method="POST">
+        <div class="user-box">
+          <input type="email" name="email" id="email" required>
+          <label for="email">Email</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="password" id="password" required>
+          <label for="password">Password</label>
+
+        </div>
+        <div class="login-par"><button class="submit login">Login</button></div>
+      </form>
+      <div class="error">
+        <% if (messages.error) { %>
+          <%= messages.error %>
+            <% } %>
+      </div>
+      <p class="already-have-account">Don't have an account? <a href="/register">Register here!</a></p>
+    </div>
+  </div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.bundle.min.js"
+    integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+kD5tr4Szkbe5P/SFIIJdA2ybp"
+    crossorigin="anonymous"></script>
+  <script src="login.js"></script>
+</body>
+
+</html>

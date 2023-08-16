@@ -1,0 +1,93 @@
+#my-map {
+    width: 45vw;
+    height: 53vw;
+    margin: 0;
+}
+.container1
+{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 4vw;
+    padding-right: 16vw;
+    padding-left: 16vw;
+    background-color: #fff;
+    /* display: flex;
+    justify-content: flex-end; */
+}
+
+
+
+footer{
+    margin-top: 4vw;;
+    display: flex;
+    background-color: #c7d2de;
+    text-align: center;
+    justify-content: space-evenly;
+    /* position: absolute;
+    bottom: 0; */
+    width: 100%;
+    
+    
+}
+/* footer h4{
+  width: 25vw;
+}
+footer h3{
+    width: 50vw;
+  } */
+  footer a{
+   
+    padding: 5px;
+    text-decoration: none;
+    color :black;
+  }
+  footer a:hover{
+    color :whitesmoke;
+  }
+  .cr
+  {
+    text-align: center;
+    background-color: #c7d2de;
+  }
+  #logout{
+    padding: 5px 20px 5px 20px;
+    border-radius: 8px;
+    font-size: medium;
+    font-family: 'Ibarra Real Nova', serif;
+  }
+  #logout:hover{
+    background-color: #c7d2de;
+  }
+
+  @media (max-width:1200px){
+     #my-map{
+        width: 50vw;
+        height: 70vw;
+     }
+  }
+
+  @media (max-width:900px){
+    #my-map{
+       width: 70vw;
+       height: 80vw;
+    }
+ }
+ @media (max-width:650px){
+    #my-map{
+       width: 70vw;
+       height: 100vh;
+    }
+ }
+ @media (max-width:500px){
+    #my-map{
+       width: 100vw;
+       height: 100vh;
+    }
+    .container1
+    {
+        padding-right: 0vw;
+        padding-left: 0vw;
+        margin-top: 0vw;
+    }
+ }

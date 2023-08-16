@@ -1,0 +1,422 @@
+.container {
+    display: flex;
+}
+
+.input-container {
+    display: flex;
+    position: relative;
+}
+
+.input-container input {
+    flex: 1;
+    outline: none;
+    width: 25vw;
+    background-color: rgb(56, 68, 69);
+    border: 0.05vw solid rgb(255, 254, 254);
+    border-radius: 0.25vw;
+    padding: 5px;
+    padding-right: 15px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-top: 1vw;
+}
+
+
+.autocomplete-items {
+    position: absolute;
+    /* width: 1vw;
+      font-size: 0.1vw; */
+    border: 1px solid rgba(217, 210, 210, 0.1);
+
+    border-top: none;
+    background-color: rgb(56, 68, 69);
+
+    z-index: 99;
+    top: calc(100% + 2px);
+    left: 0;
+    right: 0;
+
+}
+
+.autocomplete-items div {
+    padding: 1vw;
+    cursor: pointer;
+}
+
+.autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.autocomplete-items .autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.clear-button {
+    color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+
+    position: absolute;
+    right: 5px;
+    top: 0;
+
+    height: 100%;
+    display: none;
+    top: 1.5vw;
+}
+
+.clear-button.visible {
+    display: flex;
+}
+
+.clear-button:hover {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* .set_size {
+      width: 25vw;
+    } */
+
+body {
+    background-image: url("Images/ross-stone-t3iJTFDqI2s-unsplash.jpg");
+
+    background-size: 100vw;
+}
+@media (max-width : 1050px){
+    body {
+        background-image: url("Images/oliver-sjostrom-hFHXlAmRwzM-unsplash.jpg");
+    
+        background-size: 100vw;
+    }
+}
+option{
+    min-width: 1.5vw;
+}
+html,
+body,
+#my-map {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.btn {
+    background-color: rgb(56, 68, 69);
+    color: white;
+}
+.btn:hover{
+    color:rgb(118, 143, 145)
+}
+
+.btn-lg {
+    background-color: rgb(56, 68, 69);
+    color: white;
+    text-decoration: none;
+}
+.btn-lg a:hover{
+     background-color: rgb(56, 68, 69);;
+    color:rgb(118, 143, 145)
+}
+
+.form-select {
+    background-color: rgb(56, 68, 69);
+    color: white;
+    z-index: 5;
+}
+.spl
+{
+    background-color: white; 
+    z-index: 15;
+}
+.form-control {
+    background-color: rgb(56, 68, 69);
+    color: white;
+}
+
+.form-label {
+    color: white;
+}
+
+.navi {
+    background-color: rgb(56, 68, 69);
+    color: white;
+}
+
+* {
+    color: white;
+}
+
+/* .form-select
+{
+    font-size: 0.5vw;
+} */
+
+#op {
+   margin-top: 3vw;
+    width: 2.5vw;
+   
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+#naming
+{
+    margin-top: 3vw;
+    width: 90vw;
+    padding-left: 1vw;
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+
+#naming  h6{
+    padding-bottom: 37px;
+}
+
+/* #car {
+    width: 400px;
+   height: 0px;
+   /* border-right: 2px solid rgb(249, 248, 248); */
+   /* position: relative; */
+    /* animation-name: car;
+   animation-duration: 12s;
+   animation-delay: 0s;
+   animation-iteration-count: infinite;
+    /* animation-timing-function: steps(5); */
+    /* animation-fill-mode: linear;  */ 
+
+/* } */ 
+
+.moving-text-par {
+    display: flex;
+    justify-content: space-around;
+}
+
+.moving-text-child {
+    width: 60vw;
+   
+
+}
+
+.intro {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@keyframes car {
+    0% {
+       height: 0%;
+
+    }
+
+    100% {
+
+        height: 100%;
+
+    }
+}
+
+.dropdown
+{
+    font-size: 1vw;
+
+    
+}
+
+.col-1 {
+    width: 20vw;
+    /* animation: ; */
+}
+.col-2
+{
+    width: 20vw; 
+}
+.col-3
+{
+    width: 20vw;
+}
+img {
+    position: relative;
+}
+
+@media (max-width:1000px) {
+    .col-1 {
+        width:50vw;
+
+    }
+    .col-2{
+        width: 50vw;
+    }
+    .col-3
+    {
+        width: 50vw;
+    }
+   
+} 
+
+@media (max-width:490px) {
+    .col-1 {
+        width:65vw;
+
+    }
+    .col-2{
+        width: 65vw;
+    }
+    .col-3
+    {
+        width: 65vw;
+    }
+   
+} 
+@media (max-width:600px) {
+   .container{
+    margin-left: 5vw;
+   }
+   
+} 
+#empty
+{
+    display: none;
+    padding-top: 2.5vw;
+    text-align: center;
+}
+.head-2
+{
+width: 100%;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+.col-4
+{
+   width: 90vw;
+   /* margin-left: 10vw; */
+}
+
+.show
+{
+    display: flex;
+    width: 90vw;
+    flex-wrap: nowrap;
+}
+.ok{
+width: 100%;
+}
+
+#edit
+{
+    font-size: 20px;
+    font-weight: bold;
+    /* padding-top: 0.75vw; */
+   
+    
+}
+#edit1
+{
+    font-size: 20px;
+    font-weight: bold;
+    /* padding-top: 0.75vw; */
+    padding-bottom: 0.7vw;
+}
+.container1
+{
+    margin-top: 8vw;
+    padding-right: 16vw;
+    padding-left: 16vw;
+    background-color: #fff;
+    /* display: flex;
+    justify-content: flex-end; */
+}
+
+.ek
+{
+font-size: 20px;
+font-weight: bold;
+/* padding-top: 0.75vw; */
+}
+
+footer{
+    margin-top: 4vw;;
+    display: flex;
+    background-color: #c7d2de;
+    text-align: center;
+    justify-content: space-evenly;
+    /* position: absolute;
+    bottom: 0; */
+    width: 100%;
+    
+    
+}
+/* footer h4{
+  width: 25vw;
+}
+footer h3{
+    width: 50vw;
+  } */
+  footer a{
+   
+    padding: 5px;
+    text-decoration: none;
+    color :black;
+  }
+  footer a:hover{
+    color :black;
+  }
+  .cr
+  {
+    text-align: center;
+    background-color: #c7d2de;
+  }
+  #spin
+  {
+    padding-top: 7vw;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .spinner-border
+  {
+    color: rgb(104, 148, 135);
+  }
+  
+  *{
+    font-family: 'Ibarra Real Nova', serif;
+  }
+  #route{
+    display: flex;
+    justify-content: center;
+  }
+  .route{
+    margin-bottom: 15vw;
+    margin-top: 5vw;
+  }
+  
+  #logout{
+    padding: 5px 20px 5px 20px;
+    border-radius: 8px;
+    font-size: medium;
+    color: black;
+  }
+  #logout:hover{
+    background-color: #c7d2de;
+  }
+
+  #enteredCities{
+    color: #c7d2de;
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 2vw;
+  }
+
+  #enteredCitiesHeading
+  {
+    margin-bottom: 0.5vw;
+    font-weight: bold;
+  }
