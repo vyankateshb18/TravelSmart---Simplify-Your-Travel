@@ -1,6 +1,6 @@
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
-} //  check before deploying
+} 
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -14,7 +14,7 @@ const initializePassport = require('./passport-config')
 
 let Email;
 
-mongoose.connect('mongodb+srv://onki0436:lawiLo5YModeLYNE@cluster0.fbbtqyc.mongodb.net/Around-the-world-in-18-stops?retryWrites=true&w=majority', {
+mongoose.connect(`${process.env.DB}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {
@@ -132,20 +132,18 @@ app.post('/createTrip.html', checkAuthenticated, async (req, res) => {
   let path = JSON.parse(req.body.PATH);
   let coordinates = JSON.parse(req.body.COORDINATES);
   let temp = await user.findOneAndUpdate({ 'email': Email }, { 'currentTripPath': path, 'currentTripCoordinates': coordinates });
-  console.log("temp" + temp);
+ 
   let Coordinates = await user.findOne({ 'email': Email }, 'currentTripCoordinates');
   let Path = await user.findOne({ 'email': Email }, 'currentTripPath');
-  console.log("coordinates" + Coordinates);
-  console.log("path" + Path);
+ 
   res.redirect('/currentTrip.html');
 });
 
 app.get('/currentTrip.html', checkAuthenticated, async (req, res) => {
-  console.log("hi");
+ 
   let coordinates = await user.findOne({ 'email': Email }, 'currentTripCoordinates');
   let path = await user.findOne({ 'email': Email }, 'currentTripPath');
-  console.log("coordinates" + coordinates);
-  console.log("path" + path);
+ 
   let route = [];
   route.push(coordinates.currentTripCoordinates);
   route.push(path.currentTripPath);
@@ -176,4 +174,4 @@ function checkNotAuthenticated(req, res, next) {
   next()
 }
 
-app.listen(8080);
+app.listen(process.env.PORT);
